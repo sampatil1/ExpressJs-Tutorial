@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    
+</head>
+<body>
+    <h1>User Details</h1>
+    <% if(user) {%>
+    <h2>Name: <%= user.name %></h2>
+    <h2>Role: <%= user.role %></h2>
+
+    <% if(user.role === "Admin") {%>
+        <h3><strong>This user has full Access</strong></h3>
+        <%} else if(user.role === "Editor") {%>
+        <h3><strong>This user can be edit content.</strong></h3>
+        <%} else {%>
+        <h3><strong>This user has limited access.</strong></h3>
+        <% } %>
+
+        <% } else {%>
+        <h3><strong>This user has limited access.</strong></h3>
+        
+        <% } %>
+</body>
+</html>
